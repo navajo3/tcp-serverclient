@@ -4,9 +4,9 @@ import sys
 # TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server_address = ('localhost', 10000)
-print('starting up on {} port {}'.format(*server_address))
+server_address = ('', 10000)
 sock.bind(server_address)
+print('starting up on {} port {}'.format(*sock.getsockname()))
 
 sock.listen(1)
 
